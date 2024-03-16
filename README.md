@@ -33,13 +33,13 @@
 
 #### 2.1 Requirements
 ```shell script
-git clone [https://github.com/Vishalkagade/Camera-Lidar-Sensor-Fusion.git](https://github.com/Vishalkagade/Camera-Lidar-Sensor-Fusion.git)
+git clone https://github.com/Vishalkagade/Camera-Lidar-Sensor-Fusion.git
 cd Camera-Lidar-Sensor-Fusion/
 pip install -r requirements.txt
 
 ```
 
-#### 2.2 data preperation
+#### 2.2 Data preperation
 Download the 3D KITTI detection dataset from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d).
 
 The downloaded data includes:
