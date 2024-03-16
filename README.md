@@ -27,4 +27,3 @@
   - Shrinking bounding boxes to ensure only points truly belonging to the objects are considered.
   - Applying the Sigma Rule to keep points within 1 or 2 standard deviations of the average distance, based on point distances.
 - **Focus on Specific Objects:** This filtering ensures the data focuses on the specific objects of interest.
-
