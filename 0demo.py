@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 model = YOLO("yolov8n.pt")  # 'n' stands for nano (small and fast)
 
 # Load an image
-image_path = "data/img/000031.png"  # Change to your image path
+image_path = "data\img\cars on road.webp"  # Change to your image path
 image = cv2.imread(image_path)
 
 # Run object detection
