@@ -10,11 +10,9 @@ point_files = sorted(Path("data/velodyne").glob("*.pcd"))
 if not point_files:
     print("No .pcd files found in 'data/velodyne/'")
 else:
-    # Load the first PCD file for visualization
-    pcd = o3d.io.read_point_cloud(str(point_files[0]))
 
-    # Print basic information about the point cloud
-    print(pcd)
+    for file in point_files:
+        pcd = o3d.io.read_point_cloud(str(file))
+        print(f"Showing: {file.name}")
+        o3d.visualization.draw_geometries([pcd])
 
-    # Visualize the point cloud
-    o3d.visualization.draw_geometries([pcd])
