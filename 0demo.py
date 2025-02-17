@@ -1,20 +1,20 @@
-from ultralytics import YOLO
-import cv2
-import matplotlib.pyplot as plt
+'''import glob as glob
+image_files=glob.glob("data/img/*.png")'''
+import open3d as o3d
+from pathlib import Path
 
-# Load the pre-trained YOLOv8 model
-model = YOLO("yolov8n.pt")  # 'n' stands for nano (small and fast)
+# Get all PCD files from the velodyne directory
+point_files = sorted(Path("data/velodyne").glob("*.pcd"))
 
-# Load an image
-image_path = "data\img\cars on road.webp"  # Change to your image path
-image = cv2.imread(image_path)
+# Check if files exist
+if not point_files:
+    print("No .pcd files found in 'data/velodyne/'")
+else:
+    # Load the first PCD file for visualization
+    pcd = o3d.io.read_point_cloud(str(point_files[0]))
 
-# Run object detection
-results = model(image)
+    # Print basic information about the point cloud
+    print(pcd)
 
-# Display the results
-for r in results:
-    r.show()  # Shows the image with detections
-
-# Save output image
-results[0].save(filename="output.jpg")
+    # Visualize the point cloud
+    o3d.visualization.draw_geometries([pcd])
